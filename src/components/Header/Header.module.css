@@ -1,0 +1,65 @@
+.inner {
+    width: 62%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 80px;
+}
+
+.logo {
+    width: 9%;
+    margin-right: 20%;
+}
+
+.action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.language {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+}
+
+.flag {
+    width: 27%;
+    border-radius: 50%;
+    margin-right: 2%;
+}
+
+.language-name {
+    font-size: 1.4rem;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    flex: 1;
+    height: 30px;
+    padding: 5px;
+    margin: 0 20px;
+    width: 30%;
+}
+
+.input-search {
+    border: none;
+    padding: 0 10px;
+    outline: none;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-end;
+    width: 16%;
+    font-size: 1.4rem;
+    padding: 4px;
+    color: blue;
+}
