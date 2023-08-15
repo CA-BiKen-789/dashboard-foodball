@@ -82,10 +82,6 @@ function BongDa() {
 		},
 	]
 
-	// useEffect() => {
-
-	// }
-
 	return (
 		<div className={cx('wrapper')}>
 			<Header />

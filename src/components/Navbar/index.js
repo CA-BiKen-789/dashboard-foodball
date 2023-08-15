@@ -19,19 +19,19 @@ function Navbar() {
 		,
 		{
 			name: "Nhận định bóng đá",
-			path: "/#"
+			path: "/nhan-dinh-bong-da"
 		},
 		{
 			name: "Tin bóng đá",
-			path: "/#"
+			path: "/tin-bong-da"
 		},
 		{
 			name: "Bóng đá Việt Nam",
-			path: "/#"
+			path: "/bong-da-viet-nam"
 		},
 		{
 			name: "Esports",
-			path: "/#"
+			path: "/esports"
 		},
 		{
 			name: "Lịch thi đấu",

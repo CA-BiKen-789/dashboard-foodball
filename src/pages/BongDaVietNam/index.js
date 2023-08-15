@@ -1,5 +1,5 @@
 import classNames from "classnames/bind";
-import styles from "./NhanDinhBongDa.module.css";
+import styles from "./BongDaVietNam.module.css";
 import Header from "~/components/Header";
 import Navbar from "~/components/Navbar";
 import Footer from "~/components/Footer";
@@ -12,7 +12,7 @@ import SubPostRecommend from "~/components/SubPostRecommend";
 
 const cx = classNames.bind(styles);
 
-function NhanDinhBongDa() {
+function BongDaVietNam() {
 
 	const listPost = [
 		{
@@ -89,7 +89,7 @@ function NhanDinhBongDa() {
 			<div className={cx('content')}>
 				<div className={cx('main-content')}>
 					<TitleNews>
-						nhận định bóng đá
+						bóng đá việt nam
 					</TitleNews>
 					<div className={cx('content-news')}>
 						<div className={cx('main-content-news')}>
@@ -157,4 +157,4 @@ function NhanDinhBongDa() {
 	);
 }
 
-export default NhanDinhBongDa;
+export default BongDaVietNam;
