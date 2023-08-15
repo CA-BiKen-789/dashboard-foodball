@@ -62,10 +62,16 @@ function Navbar() {
 			}
 		};
 
+		const handleRouteChange = () => {
+			window.scrollTo(0, 0);
+		};
+
 		window.addEventListener("scroll", handleScroll);
+		window.addEventListener("routeChange", handleRouteChange);
 
 		return () => {
 			window.removeEventListener("scroll", handleScroll);
+			window.removeEventListener("routeChange", handleRouteChange);
 		};
 	}, []);
 
@@ -76,14 +82,20 @@ function Navbar() {
 					<li className={cx('menu-item', 'menu-item_home')}>
 						<NavLink
 							className={cx(isActive('/'))}
-							to="/" >
+							to="/" onClick={() => {
+								const event = new Event("routeChange");
+								window.dispatchEvent(event);
+							}}>
 							<HomeOutlined />
 						</NavLink>
 					</li>
 					{listMenu.map((item, index) => (
 						<li key={index}>
 							<NavLink
-								className={cx(isActive(item.path))} to={item.path}>
+								className={cx(isActive(item.path))} to={item.path} onClick={() => {
+									const event = new Event("routeChange");
+									window.dispatchEvent(event);
+								}}>
 								{item.name}
 							</NavLink>
 						</li>

@@ -34,3 +34,15 @@
 .post img:hover {
     transform: scale(105%);
 }
+
+.slider {
+    background-color: #0d2655;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.slider-content {
+    width: 62%;
+    margin: 0 auto;
+    overflow: hidden;
+}

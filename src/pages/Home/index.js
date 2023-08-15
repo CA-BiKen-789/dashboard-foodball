@@ -6,6 +6,7 @@ import Footer from "~/components/Footer";
 import Post from "~/components/Post";
 import { Link } from "react-router-dom";
 import TitleNews from "~/components/TitleNews";
+import Slider from "~/components/Slider";
 
 const cx = classNames.bind(styles);
 
@@ -56,10 +57,6 @@ function Home() {
 
 	];
 
-	// useEffect() => {
-
-	// }
-
 	return (
 		<div className={cx('wrapper')}>
 			<Header />
@@ -84,6 +81,11 @@ function Home() {
 							</li>
 						))}
 					</ul>
+				</div>
+			</div>
+			<div className={cx('slider')}>
+				<div className={cx('slider-content')}>
+					<Slider />
 				</div>
 			</div>
 			<Footer />

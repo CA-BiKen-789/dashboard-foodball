@@ -1,0 +1,32 @@
+.wrapper {
+    width: 100%;
+}
+
+.title {
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+.wrapper img {
+    width: 100%;
+}
+
+.content {
+    color: #fff;
+    font-size: 1.4rem;
+    padding: 10px 20px;
+    text-align: justify;
+    margin-top: 20px;
+    line-height: 3rem;
+}
+
+.link {
+    display: block;
+    transition: transform 0.3s ease-in-out;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.link:hover {
+    transform: scale(1.05);
+}
