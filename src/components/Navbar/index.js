@@ -1,20 +1,20 @@
 import classNames from "classnames/bind";
 import styles from "./Navbar.module.css";
-import { Link } from "react-router-dom";
+import { NavLink, useLocation } from 'react-router-dom';
 import { HomeOutlined } from "@ant-design/icons/lib/icons";
 import { useEffect, useState } from "react";
 
 const cx = classNames.bind(styles);
 
 function Navbar() {
+	const location = useLocation();
+	const isActive = (path) => {
+		return location.pathname === path ? 'active' : '';
+	};
 	const listMenu = [
 		{
-			name: "Home",
-			path: "/"
-		},
-		{
 			name: "Bóng đá",
-			path: "/#"
+			path: "/bong-da"
 		}
 		,
 		{
@@ -74,15 +74,18 @@ function Navbar() {
 			<div className={cx('inner')}>
 				<ul className={cx('list-menu')}>
 					<li className={cx('menu-item', 'menu-item_home')}>
-						<Link to="/">
+						<NavLink
+							className={cx(isActive('/'))}
+							to="/" >
 							<HomeOutlined />
-						</Link>
+						</NavLink>
 					</li>
 					{listMenu.map((item, index) => (
 						<li key={index}>
-							<Link to={item.path}>
+							<NavLink
+								className={cx(isActive(item.path))} to={item.path}>
 								{item.name}
-							</Link>
+							</NavLink>
 						</li>
 					))}
 				</ul>

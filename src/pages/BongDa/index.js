@@ -1,15 +1,18 @@
 import classNames from "classnames/bind";
-import styles from "./Home.module.css";
+import styles from "./BongDa.module.css";
 import Header from "~/components/Header";
 import Navbar from "~/components/Navbar";
 import Footer from "~/components/Footer";
-import Post from "~/components/Post";
 import { Link } from "react-router-dom";
 import TitleNews from "~/components/TitleNews";
+import MainPost from "~/components/MainPost";
+import PostSubPage from "~/components/PostSubPage";
+import PostRecommend from "~/components/PostRecommend";
+import SubPostRecommend from "~/components/SubPostRecommend";
 
 const cx = classNames.bind(styles);
 
-function Home() {
+function BongDa() {
 
 	const listPost = [
 		{
@@ -56,6 +59,29 @@ function Home() {
 
 	];
 
+	const listSubPosts = [
+		{
+			subTitle: "Ngoại Hạng Anh vòng 17: Derby London, tranh tài nghẹt thở",
+			subImage: "/images/posts/post1.png",
+			timestamp: "03:50, 15/08/2023"
+		},
+		{
+			subTitle: "Yếu Tố Tạo Nên Sức Mạnh Tuyển Pháp Ở World Cup 2022",
+			subImage: "/images/posts/post2.png",
+			timestamp: "03:50, 15/08/2023"
+		},
+		{
+			subTitle: "Soi kèo Brentford vs Tottenham Hotspur: 19h30 Ngày 26/12 - Ngoại Hạng Anh",
+			subImage: "/images/posts/post3.png",
+			timestamp: "03:50, 15/08/2023"
+		},
+		{
+			subTitle: "Động Thái Của David De Gea Khi Sau Khi Tây Ban Nha Bị Loại",
+			subImage: "/images/posts/post4.png",
+			timestamp: "03:50, 15/08/2023"
+		},
+	]
+
 	// useEffect() => {
 
 	// }
@@ -65,30 +91,74 @@ function Home() {
 			<Header />
 			<Navbar />
 			<div className={cx('content')}>
-				<div className={cx('post')}>
+				<div className={cx('main-content')}>
 					<TitleNews>
 						bóng đá
 					</TitleNews>
-					<ul className={cx('post-list')}>
-						{listPost.map((item, index) => (
-							<li className={cx('post-item')} key={index}>
+					<div className={cx('content-news')}>
+						<div className={cx('main-content-news')}>
+							<div className={cx('main-post')}>
 								<Link to="/#">
-									<Post
-										image={item.image}
-										alt={item.alt}
-										description={item.description}
-										title={item.title}
-										postClass={cx('post-layout')}
+									<MainPost
+										title="Bóng Đá Ảo Châu Á Là Gì? Bí Kíp Cá Cược Bóng Đá Ảo Thắng Lớn"
+										description="Tìm hiểu định nghĩa bóng đá ảo châu Á là gì - Chia sẻ kinh nghiệm cá độ bóng đá ảo hay nhất tại Thethao789 giúp cược thủ thắng đậm nhà cái"
+										image="/images/posts/post1.png"
+										alt="Ảnh bài post chính"
 									/>
 								</Link>
-							</li>
-						))}
-					</ul>
+							</div>
+							<div className={cx('post')}>
+								<ul className={cx('post-list')}>
+									{listPost.map((item, index) => (
+										<li className={cx('post-item')} key={index}>
+											<Link to="/#">
+												<PostSubPage
+													postLayout={cx('post-layout')}
+													image={item.image}
+													alt={item.alt}
+													description={item.description}
+													title={item.title}
+													postContent={cx('post-content')}
+												/>
+											</Link>
+										</li>
+									))}
+								</ul>
+							</div>
+						</div>
+						<div className={cx('sub-content')}>
+							<TitleNews>
+								xem nhiều nhất
+							</TitleNews>
+							<Link to="/#">
+								<PostRecommend
+									image="/images/posts/post2.png"
+									title="Danh Hiệu Lẩn Trốn Đội Tuyển Anh Dù Có Binh Lực Hùng Mạnh"
+									timestamp="03:40 15/08/2023"
+								/>
+							</Link>
+							<ul>
+								{
+									listSubPosts.map((item, index) => (
+										<li key={index}>
+											<Link to="/#">
+												<SubPostRecommend
+													image={item.subImage}
+													title={item.subTitle}
+													timestamp={item.timestamp} />
+											</Link>
+										</li>
+									))}
+							</ul>
+						</div>
+					</div>
+
 				</div>
+
 			</div>
 			<Footer />
 		</div>
 	);
 }
 
-export default Home;
+export default BongDa;

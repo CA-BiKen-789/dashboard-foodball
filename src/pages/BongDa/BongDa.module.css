@@ -1,0 +1,42 @@
+.wrapper {
+    width: 100%;
+}
+
+.content {
+    width: 62%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.post-layout.post {
+    display: flex;
+}
+
+.post-content {
+    display: flex;
+    padding: 20px;
+}
+
+.post-item {
+    display: flex;
+}
+
+.post-item img {
+    width: 70%;
+}
+
+.content-news {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-content-news {
+    width: 65%;
+}
+
+.sub-content {
+    width: 34%;
+    margin-top: 10px;
+    padding-right: 10px;
+}

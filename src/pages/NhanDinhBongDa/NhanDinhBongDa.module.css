@@ -1,0 +1,13 @@
+.wrapper {
+    width: 100%;
+}
+
+.content {
+    width: 62%;
+    margin: 0 auto;
+}
+
+.post-list {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}

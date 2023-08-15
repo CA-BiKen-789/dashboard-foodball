@@ -1,6 +1,6 @@
 .wrapper {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .inner {
@@ -23,13 +23,13 @@
 }
 
 .menu-item_home a {
-    background-color: #fb592e;
+    background-color: var(--primary-color);
     padding: 0 30px;
     color: #fff;
 }
 
 .list-menu a:hover {
-    color: #fb592e;
+    color: var(--primary-color);
 }
 
 .menu-item_home a:hover {
@@ -54,4 +54,8 @@
     z-index: 100;
     background-color: #fff;
     animation: slideDown 0.6s ease;
+}
+
+.active {
+    color: var(--primary-color);
 }

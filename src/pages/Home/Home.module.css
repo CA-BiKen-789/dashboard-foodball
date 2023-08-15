@@ -1,3 +1,36 @@
 .wrapper {
     width: 100%;
 }
+
+.content {
+    width: 62%;
+    margin: 0 auto;
+}
+
+.post-list {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.post img {
+    width: 100%;
+    transition: transform 0.3s;
+}
+
+.post h2 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+}
+
+.post span {
+    font-size: 1.4rem;
+}
+
+.post:hover {
+    color: var(--primary-color);
+}
+
+.post img:hover {
+    transform: scale(105%);
+}

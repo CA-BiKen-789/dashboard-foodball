@@ -1,23 +1,22 @@
 import classNames from "classnames/bind";
-import styles from "./Post.module.css";
+import styles from "./SubPostRecommend.module.css";
 
 const cx = classNames.bind(styles);
 
-function Post({ image, alt, title, description, postLayout, postContent }) {
-
+function SubPostRecommend({ image, title, timestamp }) {
 	return (
 		<div className={cx("wrapper")}>
 			<div className={cx("post")}>
 				<div className={cx("post-img")}>
-					<img src={image} alt={alt} />
+					<img src={image} alt="Sub post" />
 				</div>
-				<div className={postContent}>
+				<div className={cx('post-content')}>
 					<h2>{title}</h2>
-					<span>{description}</span>
+					<span>{timestamp}</span>
 				</div>
 			</div>
 		</div>
 	);
 }
 
-export default Post;
+export default SubPostRecommend;

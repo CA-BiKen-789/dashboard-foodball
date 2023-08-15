@@ -1,0 +1,44 @@
+.post {
+    width: 100%;
+    text-align: justify;
+    margin-top: 25px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    padding-bottom: 20px;
+}
+
+.post-img {
+    width: 60%;
+    overflow: hidden;
+}
+
+.post img {
+    width: 100%;
+    transition: transform 0.3s;
+}
+
+.post-content {
+    max-width: 60%;
+}
+
+.post h2 {
+    margin: 10px 0;
+    font-size: 1.3rem;
+    font-weight: 300;
+    padding: 0 10px;
+}
+
+.post span {
+    display: block;
+    font-size: 1.2rem;
+    color: #979797;
+    padding: 0 10px;
+}
+
+.post:hover {
+    color: var(--primary-color);
+}
+
+.post img:hover {
+    transform: scale(105%);
+}

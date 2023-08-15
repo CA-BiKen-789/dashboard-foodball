@@ -1,5 +1,5 @@
 import classNames from "classnames/bind";
-import styles from "./Home.module.css";
+import styles from "./NhanDinhBongDa.module.css";
 import Header from "~/components/Header";
 import Navbar from "~/components/Navbar";
 import Footer from "~/components/Footer";
@@ -9,7 +9,7 @@ import TitleNews from "~/components/TitleNews";
 
 const cx = classNames.bind(styles);
 
-function Home() {
+function NhanDinhBongDa() {
 
 	const listPost = [
 		{
@@ -78,7 +78,6 @@ function Home() {
 										alt={item.alt}
 										description={item.description}
 										title={item.title}
-										postClass={cx('post-layout')}
 									/>
 								</Link>
 							</li>
@@ -91,4 +90,4 @@ function Home() {
 	);
 }
 
-export default Home;
+export default NhanDinhBongDa;
