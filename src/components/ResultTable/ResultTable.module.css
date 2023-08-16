@@ -1,0 +1,95 @@
+.wrapper {
+    width: 20%;
+    margin-top: 20px;
+}
+
+.table {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-top: 4px solid var(--primary-color);
+}
+
+.header {
+    height: 36px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.name-league {
+    max-width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.name-league img {
+    width: 25px;
+    height: 25px;
+}
+
+.name-league .name {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    padding: 0 0 0 5px;
+}
+
+.header span {
+    text-transform: capitalize;
+    display: flex;
+    font-size: 1.4rem;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.body {
+    padding: 10px;
+}
+
+.team-list {
+    max-height: 130px;
+    overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+.team-list::-webkit-scrollbar {
+    width: 1px;
+}
+
+.team-list::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    padding: 5px 0;
+}
+
+.item span {
+    padding-right: 10px;
+}
+
+.score {
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.wrapper a {
+    display: block;
+    font-size: 2rem;
+    background-color: #ccc;
+    color: #333;
+    text-align: center;
+    padding: 2px 0;
+}
+
+.wrapper a:hover {
+    opacity: 0.6;
+}

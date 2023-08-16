@@ -7,6 +7,48 @@
     margin: 0 auto;
 }
 
+.calendar-table {
+    margin-top: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+.lastest-post {
+    width: 100%;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.lastest-news {
+    width: 60%;
+    display: block;
+}
+
+.sub-lastest-news {
+    width: 40%;
+    overflow: hidden;
+    height: 452px;
+    overflow-y: scroll;
+}
+
+.sub-lastest-news::-webkit-scrollbar {
+    width: 3px;
+}
+
+.sub-lastest-news::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+}
+
+.post {
+    margin-top: 10px;
+}
+
+.post-content {
+    padding: 10px;
+    width: 100%;
+}
+
 .post-list {
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -45,4 +87,16 @@
     width: 62%;
     margin: 0 auto;
     overflow: hidden;
+}
+
+.table-league {
+    width: 62%;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px 12px;
+}
+
+.title-table {
+    width: 62%;
+    margin: 10px auto 0;
 }

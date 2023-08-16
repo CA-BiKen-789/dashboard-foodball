@@ -1,0 +1,41 @@
+.calendar {
+    width: 100%;
+    border: 20px solid transparent;
+    border-right: 1px solid #ccc;
+    padding: 15px 15px 15px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.match-time {
+    font-size: 1.4rem;
+    padding: 0 10px;
+    color: #888;
+}
+
+.link {
+    display: flex;
+}
+
+.link:hover {
+    background-color: #eee;
+    transition: all 0.3s ease;
+}
+
+.match-item {
+    display: flex;
+    align-items: center;
+}
+
+.match-logo {
+    width: 20px;
+    margin: 4px;
+}
+
+.name {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}

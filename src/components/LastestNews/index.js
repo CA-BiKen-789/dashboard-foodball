@@ -1,15 +1,15 @@
 import classNames from "classnames/bind";
-import styles from "./Post.module.css";
+import styles from "./LastestNews.module.css";
 
 const cx = classNames.bind(styles);
 
-function Post({ image, alt, title, description, postContent }) {
+function LastestNews({ image, title, description, postContent }) {
 
 	return (
 		<div className={cx("wrapper")}>
 			<div className={cx("post")}>
 				<div className={cx("post-img")}>
-					<img src={image} alt={alt} />
+					<img src={image} alt="Hình ảnh bài post" />
 				</div>
 				<div className={postContent}>
 					<h2>{title}</h2>
@@ -20,4 +20,4 @@ function Post({ image, alt, title, description, postContent }) {
 	);
 }
 
-export default Post;
+export default LastestNews;

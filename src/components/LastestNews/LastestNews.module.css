@@ -1,0 +1,35 @@
+.post {
+    width: 100%;
+    padding: 10px;
+    text-align: justify;
+    margin-top: 10px;
+    background-color: #eee;
+}
+
+.post-img {
+    width: 100%;
+    overflow: hidden;
+}
+
+.post img {
+    width: 100%;
+    transition: transform 0.3s;
+}
+
+.post h2 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+}
+
+.post span {
+    font-size: 1.4rem;
+}
+
+.post:hover {
+    color: var(--primary-color);
+}
+
+.post img:hover {
+    transform: scale(105%);
+}

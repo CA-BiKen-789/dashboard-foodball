@@ -7,6 +7,10 @@ import Post from "~/components/Post";
 import { Link } from "react-router-dom";
 import TitleNews from "~/components/TitleNews";
 import Slider from "~/components/Slider";
+import ResultTable from "~/components/ResultTable";
+import LastestNews from "~/components/LastestNews";
+import SubLastestNews from "~/components/SubLastestNews";
+import Calendar from "~/components/Calendar";
 
 const cx = classNames.bind(styles);
 
@@ -57,12 +61,64 @@ function Home() {
 
 	];
 
+	const listTeams = [
+		{
+			nameTeam: 'Man City',
+			score: 89
+		},
+		{
+			nameTeam: 'Man UTD',
+			score: 57
+		},
+		{
+			nameTeam: 'Arsenal',
+			score: 47
+		},
+		{
+			nameTeam: 'Dortmund',
+			score: 44
+		}
+	]
+
 	return (
 		<div className={cx('wrapper')}>
 			<Header />
 			<Navbar />
 			<div className={cx('content')}>
+				<div className={cx('calendar')}>
+					<TitleNews>Lịch thi đấu</TitleNews>
+					<div className={cx('calendar-table')}>
+						<Calendar />
+					</div>
+				</div>
 				<div className={cx('post')}>
+					<TitleNews>Tin mới nhất</TitleNews>
+					<ul className={cx('lastest-post')}>
+						<div className={cx('lastest-news')}>
+							<Link to="/#">
+								<LastestNews
+									image="/images/posts/post8.png"
+									title="Bóng Đá Ảo Châu Á Là Gì? Bí Kíp Cá Cược Bóng Đá Ảo Thắng Lớn"
+									description="HLV Park Hang-seo là một trong những HLV thành công nhất với bóng đá Việt Nam. Vậy lý do nào khiến nhà cầm quân người Hàn"
+								/>
+							</Link>
+						</div>
+						<div className={cx('sub-lastest-news')}>
+							{listPost.map((item, index) =>
+							(
+								<li key={index}>
+									<Link to="/#">
+										<SubLastestNews
+											postContent={cx('post-content')}
+											image={item.image}
+											title={item.title}
+											description={item.description}
+										/>
+									</Link>
+								</li>
+							))}
+						</div>
+					</ul>
 					<TitleNews>
 						bóng đá
 					</TitleNews>
@@ -87,6 +143,40 @@ function Home() {
 				<div className={cx('slider-content')}>
 					<Slider />
 				</div>
+			</div>
+			<div className={cx('title-table')}>
+				<TitleNews>Kết quả giải đấu</TitleNews>
+			</div>
+			<div className={cx('table-league')}>
+				<ResultTable
+					listTeams={listTeams}
+					logoLeague='/images/league/ngoai-hang-anh-icon.png'
+					nameLeague='ngoại hạng anh'
+				/>
+				<ResultTable
+					listTeams={listTeams}
+
+					logoLeague='/images/league/league1-icon.png'
+					nameLeague='league 1'
+				/>
+				<ResultTable
+					listTeams={listTeams}
+
+					logoLeague='/images/league/laliga-icon.png'
+					nameLeague='la liga'
+				/>
+				<ResultTable
+					listTeams={listTeams}
+
+					logoLeague='/images/league/bundesliga-icon.png'
+					nameLeague='bundesliga'
+				/>
+				<ResultTable
+					listTeams={listTeams}
+
+					logoLeague='/images/league/seria-a-icon.png'
+					nameLeague='seria a'
+				/>
 			</div>
 			<Footer />
 		</div>

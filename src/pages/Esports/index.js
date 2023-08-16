@@ -89,35 +89,38 @@ function Esports() {
 			<div className={cx('content')}>
 				<div className={cx('main-content')}>
 					<TitleNews>
-						esports
+						bóng đá
 					</TitleNews>
 					<div className={cx('content-news')}>
 						<div className={cx('main-content-news')}>
-							<div className={cx('main-post')}>
-								<Link to="/#">
-									<MainPost
-										title="Bóng Đá Ảo Châu Á Là Gì? Bí Kíp Cá Cược Bóng Đá Ảo Thắng Lớn"
-										description="Tìm hiểu định nghĩa bóng đá ảo châu Á là gì - Chia sẻ kinh nghiệm cá độ bóng đá ảo hay nhất tại Thethao789 giúp cược thủ thắng đậm nhà cái"
-										image="/images/posts/post1.png"
-										alt="Ảnh bài post chính"
-									/>
-								</Link>
-							</div>
 							<div className={cx('post')}>
 								<ul className={cx('post-list')}>
 									{listPost.map((item, index) => (
-										<li className={cx('post-item')} key={index}>
-											<Link to="/#">
-												<PostSubPage
-													postLayout={cx('post-layout')}
-													image={item.image}
-													alt={item.alt}
-													description={item.description}
-													title={item.title}
-													postContent={cx('post-content')}
-												/>
-											</Link>
-										</li>
+										index === 0 ? (
+											<li className={cx('main-post')} key={index}>
+												<Link to="/#">
+													<MainPost
+														title={item.title}
+														description={item.description}
+														image={item.image}
+														alt="Ảnh bài post chính"
+													/>
+												</Link>
+											</li>
+										) : (
+											<li className={cx('post-item')} key={index}>
+												<Link to="/#">
+													<PostSubPage
+														postLayout={cx('post-layout')}
+														image={item.image}
+														alt={item.alt}
+														description={item.description}
+														title={item.title}
+														postContent={cx('post-content')}
+													/>
+												</Link>
+											</li>
+										)
 									))}
 								</ul>
 							</div>
@@ -126,16 +129,17 @@ function Esports() {
 							<TitleNews>
 								xem nhiều nhất
 							</TitleNews>
-							<Link to="/#">
-								<PostRecommend
-									image="/images/posts/post2.png"
-									title="Danh Hiệu Lẩn Trốn Đội Tuyển Anh Dù Có Binh Lực Hùng Mạnh"
-									timestamp="03:40 15/08/2023"
-								/>
-							</Link>
 							<ul>
-								{
-									listSubPosts.map((item, index) => (
+								{listSubPosts.map((item, index) => (
+									index === 0 ? (
+										<Link to="/#" key={index}>
+											<PostRecommend
+												image="/images/posts/post2.png"
+												title="Danh Hiệu Lẩn Trốn Đội Tuyển Anh Dù Có Binh Lực Hùng Mạnh"
+												timestamp="03:40 15/08/2023"
+											/>
+										</Link>
+									) : (
 										<li key={index}>
 											<Link to="/#">
 												<SubPostRecommend
@@ -144,13 +148,12 @@ function Esports() {
 													timestamp={item.timestamp} />
 											</Link>
 										</li>
-									))}
+									)
+								))}
 							</ul>
 						</div>
 					</div>
-
 				</div>
-
 			</div>
 			<Footer />
 		</div>

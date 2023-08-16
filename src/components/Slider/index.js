@@ -1,8 +1,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import styles from './Slider.module.css';
 import classNames from 'classnames/bind';
 import TitleNews from '~/components/TitleNews';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Link } from 'react-router-dom';
 
 import 'swiper/css';
