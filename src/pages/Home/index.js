@@ -11,6 +11,7 @@ import ResultTable from "~/components/ResultTable";
 import LastestNews from "~/components/LastestNews";
 import SubLastestNews from "~/components/SubLastestNews";
 import Calendar from "~/components/Calendar";
+import NoContent from "~/components/NoContent";
 
 const cx = classNames.bind(styles);
 
@@ -123,19 +124,23 @@ function Home() {
 						bóng đá
 					</TitleNews>
 					<ul className={cx('post-list')}>
-						{listPost.map((item, index) => (
-							<li className={cx('post-item')} key={index}>
-								<Link to="/#">
-									<Post
-										image={item.image}
-										alt={item.alt}
-										description={item.description}
-										title={item.title}
-										postClass={cx('post-layout')}
-									/>
-								</Link>
-							</li>
-						))}
+						{listPost.length > 0 ?
+							(listPost.map((item, index) => (
+								<li className={cx('post-item')} key={index}>
+									<Link to="/#">
+										<Post
+											image={item.image}
+											alt={item.alt}
+											description={item.description}
+											title={item.title}
+											postClass={cx('post-layout')}
+										/>
+									</Link>
+								</li>
+							))) : (
+								<NoContent />
+							)
+						}
 					</ul>
 				</div>
 			</div>

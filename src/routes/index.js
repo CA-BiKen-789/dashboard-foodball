@@ -4,6 +4,7 @@ import Home from '~/pages/Home';
 import NhanDinhBongDa from '~/pages/NhanDinhBongDa';
 import TinBongDa from '~/pages/TinBongDa';
 import Esports from '~/pages/Esports';
+import NotFound from '~/pages/NotFound';
 
 const publicRoutes = [
 	{ path: '/', component: Home },
@@ -11,7 +12,8 @@ const publicRoutes = [
 	{ path: '/nhan-dinh-bong-da', component: NhanDinhBongDa },
 	{ path: '/tin-bong-da', component: TinBongDa },
 	{ path: '/bong-da-viet-nam', component: BongDaVietNam },
-	{ path: '/esports', component: Esports }
+	{ path: '/esports', component: Esports },
+	{ path: '*', component: NotFound }
 ];
 
 const privateRoutes = [];
