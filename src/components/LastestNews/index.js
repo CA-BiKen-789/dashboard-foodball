@@ -12,8 +12,8 @@ function LastestNews({ image, title, description, postContent }) {
 					<img src={image} alt="Hình ảnh bài post" />
 				</div>
 				<div className={postContent}>
-					<h2>{title}</h2>
-					<span>{description}</span>
+					<h2 dangerouslySetInnerHTML={{ __html: title }} />
+					<span className={cx('description')} dangerouslySetInnerHTML={{ __html: description }} />
 				</div>
 			</div>
 		</div>

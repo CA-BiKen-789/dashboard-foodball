@@ -40,3 +40,14 @@
 .post-content {
     max-width: 65%;
 }
+
+.timestamp {
+    display: block;
+    margin-top: 40px;
+    font-size: 1.2rem;
+    color: #999;
+}
+
+.description {
+    font-weight: 300;
+}

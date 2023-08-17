@@ -13,7 +13,7 @@ function MainPost({ image, alt, title, description }) {
 				</div>
 				<div className={cx("main-post-content")}>
 					<h2>{title}</h2>
-					<span>{description}</span>
+					<span className={cx('description')} dangerouslySetInnerHTML={{ __html: description }} />
 				</div>
 			</div>
 		</div>

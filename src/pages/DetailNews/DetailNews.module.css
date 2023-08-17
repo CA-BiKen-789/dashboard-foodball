@@ -7,6 +7,14 @@
     margin: 0 auto;
 }
 
+.main-post {
+    width: 100%;
+}
+
+.main-post img {
+    width: 100%;
+}
+
 .post-layout.post {
     display: flex;
 }

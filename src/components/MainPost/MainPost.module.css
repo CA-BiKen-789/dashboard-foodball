@@ -28,3 +28,8 @@
 .main-post-content span {
     font-size: 1.4rem;
 }
+
+.description {
+    display: block;
+    font-weight: 300;
+}

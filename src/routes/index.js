@@ -5,6 +5,7 @@ import NhanDinhBongDa from '~/pages/NhanDinhBongDa';
 import TinBongDa from '~/pages/TinBongDa';
 import Esports from '~/pages/Esports';
 import NotFound from '~/pages/NotFound';
+import DetailNews from '~/pages/DetailNews';
 
 const publicRoutes = [
 	{ path: '/', component: Home },
@@ -13,6 +14,7 @@ const publicRoutes = [
 	{ path: '/tin-bong-da', component: TinBongDa },
 	{ path: '/bong-da-viet-nam', component: BongDaVietNam },
 	{ path: '/esports', component: Esports },
+	{ path: '/detail/:postId', component: DetailNews },
 	{ path: '*', component: NotFound }
 ];
 

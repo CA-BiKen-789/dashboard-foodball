@@ -32,3 +32,7 @@
 .post img:hover {
     transform: scale(105%);
 }
+
+.description {
+    font-weight: 300;
+}

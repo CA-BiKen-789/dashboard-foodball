@@ -63,7 +63,11 @@ function Navbar() {
 		};
 
 		const handleRouteChange = () => {
-			window.scrollTo(0, 0);
+			window.scrollTo({
+				top: 0,
+				left: 0,
+				behavior: "smooth"
+			});
 		};
 
 		window.addEventListener("scroll", handleScroll);
@@ -74,6 +78,9 @@ function Navbar() {
 			window.removeEventListener("routeChange", handleRouteChange);
 		};
 	}, []);
+
+
+
 
 	return (
 		<div className={cx("wrapper", { "fixed-navbar": isFixed })}>
