@@ -13,11 +13,39 @@ import SubLastestNews from "~/components/SubLastestNews";
 import Calendar from "~/components/Calendar";
 import NoContent from "~/components/NoContent";
 import { useEffect, useState } from "react";
+import { Swiper } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 const cx = classNames.bind(styles);
 
-function Home() {
+function formatDate(timestamp) {
+	const date = new Date(timestamp);
+	const currentDate = new Date();
+	const oneDay = 24 * 60 * 60 * 1000;
 
+	if (date.toDateString() === currentDate.toDateString()) {
+		return "Hôm nay";
+	} else if (date.toDateString() === new Date(currentDate - oneDay).toDateString()) {
+		return "Hôm qua";
+	} else if (date.toDateString() === new Date(currentDate + oneDay).toDateString()) {
+		return "Ngày mai";
+	}
+
+	const options = {
+		weekday: 'long',
+		day: 'numeric',
+		month: 'long',
+		hour: '2-digit',
+		minute: '2-digit',
+		timeZone: 'Asia/Ho_Chi_Minh'
+	};
+	return new Intl.DateTimeFormat('vi-VN', options).format(date);
+}
+
+function Home() {
 	const listTeams = [
 		{
 			nameTeam: 'Man City',
@@ -37,6 +65,16 @@ function Home() {
 		}
 	]
 	const [posts, setPosts] = useState([]);
+	const [fixtures, setFixtures] = useState([]);
+	const [leagues, setLeagues] = useState([]);
+
+	useEffect(() => {
+		fetch('https://api.keovip11.tv/api/football/fixtures')
+			.then(res => res.json())
+			.then(fixtures => {
+				setFixtures(fixtures.response);
+			});
+	}, [])
 
 	useEffect(() => {
 		fetch('https://api.thethao789.com/api/post/getByTagSlug/bong-da?pageIndex=1&pageSize=6')
@@ -45,6 +83,15 @@ function Home() {
 				setPosts(posts.data);
 			});
 	}, []);
+
+	useEffect(() => {
+		fetch('https://api.keovip11.tv/api/football/leagues')
+			.then(res => res.json())
+			.then(leagues => {
+				setLeagues(leagues.response);
+			});
+	}, []);
+
 	return (
 		<div className={cx('wrapper')}>
 			<Header />
@@ -53,7 +100,28 @@ function Home() {
 				<div className={cx('calendar')}>
 					<TitleNews>Lịch thi đấu</TitleNews>
 					<div className={cx('calendar-table')}>
-						<Calendar />
+						<Swiper
+							modules={[Navigation, Pagination, Scrollbar, A11y]}
+							spaceBetween={0}
+							slidesPerView={5}
+							navigation
+							pagination={{ clickable: true }}
+							scrollbar={{ draggable: true }}
+						>
+							{fixtures.map((item, index) => (
+								<SwiperSlide key={index}>
+									<Calendar
+										link={`/du-lieu-bong-da/${item.league.id}`}
+										timestamp={formatDate(item.fixture.date)}
+										homeLogo={item.teams.home.logo}
+										homeName={item.teams.home.name}
+										awayLogo={item.teams.away.logo}
+										awayName={item.teams.away.name}
+									/>
+								</SwiperSlide>
+							))}
+						</Swiper>
+
 					</div>
 				</div>
 				<div className={cx('post')}>

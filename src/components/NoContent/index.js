@@ -5,9 +5,9 @@ const cx = classNames.bind(styles);
 
 function NoContent() {
 	return (
-		<div className={cx('wrapper')}>
+		<span className={cx('wrapper')}>
 			Không có nội dung để hiển thị
-		</div>
+		</span>
 	);
 }
 

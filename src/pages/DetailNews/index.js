@@ -15,8 +15,6 @@ import { useEffect, useState } from "react";
 const cx = classNames.bind(styles);
 
 function DetailNews() {
-	// const { postId } = useParams();
-
 	const listPost = [
 		{
 			title: "Bóng Đá Ảo Châu Á Là Gì? Bí Kíp Cá Cược Bóng Đá Ảo Thắng Lớn",

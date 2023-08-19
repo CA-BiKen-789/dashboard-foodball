@@ -29,7 +29,6 @@ function BongDa() {
 			});
 	}, []);
 
-	console.log(posts);
 	return (
 		<div className={cx('wrapper')}>
 			<Header />
