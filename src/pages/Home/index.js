@@ -66,7 +66,6 @@ function Home() {
 	]
 	const [posts, setPosts] = useState([]);
 	const [fixtures, setFixtures] = useState([]);
-	const [leagues, setLeagues] = useState([]);
 
 	useEffect(() => {
 		fetch('https://api.keovip11.tv/api/football/fixtures')
@@ -81,14 +80,6 @@ function Home() {
 			.then(res => res.json())
 			.then(posts => {
 				setPosts(posts.data);
-			});
-	}, []);
-
-	useEffect(() => {
-		fetch('https://api.keovip11.tv/api/football/leagues')
-			.then(res => res.json())
-			.then(leagues => {
-				setLeagues(leagues.response);
 			});
 	}, []);
 

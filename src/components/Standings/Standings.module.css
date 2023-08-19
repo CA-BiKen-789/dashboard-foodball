@@ -1,0 +1,105 @@
+.table-body {
+    border: 1px solid #ccc;
+    border-radius: 0 0 6px 6px;
+    padding: 30px 20px;
+    height: 60vh;
+}
+
+.table-body .table-body-layout {
+    height: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+table {
+    width: 100%;
+    border: 1px solid #c7c7c7;
+    border-radius: 6px;
+    border-collapse: inherit;
+    overflow: hidden;
+    font-size: 1.3rem;
+    color: #555;
+}
+
+thead tr {
+    background: #fafafa;
+    height: 34px;
+}
+
+thead tr th {
+    border: none;
+    background: #fafafa;
+}
+
+thead tr th:first-child {
+    column-span: 2;
+}
+tbody tr td:first-child {
+    width: 300px;
+}
+
+tbody tr td {
+    font-size: 1.4rem;
+    width: 100px;
+    border-top: 1px solid #c7c7c7;
+    color: #38404d;
+    text-align: center;
+}
+
+tbody tr td:last-child {
+    width: 170px;
+}
+
+tbody .team-name {
+    display: inline-flex;
+    align-items: center;
+}
+
+.first-col {
+    display: flex;
+    align-items: center;
+}
+
+.first-col .no {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    background-color: var(--primary-color);
+    color: #fff;
+    margin-right: 5px;
+}
+
+.team-name img {
+    width: 20px;
+    margin-right: 5px;
+}
+
+.border-top-bottom {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+table .form {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px;
+}
+
+table .form span {
+    background-color: rgb(12, 201, 12);
+    color: #fff;
+    display: block;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+.table-body .table-body-layout::-webkit-scrollbar {
+    width: 3px;
+}
+
+.table-body .table-body-layout::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+}
